@@ -138,10 +138,14 @@ opacity:1;
 /*-- loader  --*/
 
 .content-wrap {
-	margin: 20px auto 40px auto;
-	max-width: 900px;
-	padding: 0 15px;
-	text-align: center;
+  margin: 20px auto 80px auto; /* increased bottom margin to account for footer */
+  max-width: 900px;
+  padding: 0 15px;
+  text-align: center;
+  position: relative; /* changed from absolute */
+  /* min-height: 100vh; */
+  overflow-y: auto;
+	color:white;
 }
 
 .logo-box img {
@@ -158,6 +162,14 @@ opacity:1;
 }
 
 .cta-box h2 {
+	color: #ffffffe6;
+	font-size: 30px;
+	font-weight: 800;
+	text-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+	margin-bottom: 20px;
+}
+
+h2 {
 	color: #ffffffe6;
 	font-size: 30px;
 	font-weight: 800;
@@ -189,16 +201,18 @@ opacity:1;
 }
 
 .footer {
-	/* position: fixed; 
-	bottom: 0; 
-	width: 100%; 
-	text-align: center; 
-	left: 50%; 
-	transform: translateX(-50%); */
-	position: fixed; bottom: 0; width: 100%; max-width: 900px; display: flex; justify-content: space-between; left: 50%; transform: translateX(-50%);
-	color: #fff;
-	margin: 40px auto 40px auto;
-	font-size: 12px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 20px 0;
+  /* background: rgba(0,0,0,0.7); */
+  z-index: 100; /* Ensure footer stays on top */
 }
 
 .footer a {
@@ -327,7 +341,7 @@ opacity:1;
 	font-size: 12px;
 }
 
-@media screen and (min-width:1200px) {
+/* @media screen and (min-width:1200px) {
 	.content-wrap {
 		position: absolute;
 		top: 40%;
@@ -335,13 +349,14 @@ opacity:1;
 		transform: translate(-50%, -50%);
 		width: 900px;
 	}
-}
+} */
 
 @media screen and (max-width:767px) {
-	.content-wrap {
-		margin-top: 80px;
+  .content-wrap {
+		margin: 20px auto 40px auto;
 		width: 100%;
-	}
+		padding-bottom: 100px; /* Add padding for footer */
+}
 	.cta-box h1 {
 		font-size: 28px;
 	}
